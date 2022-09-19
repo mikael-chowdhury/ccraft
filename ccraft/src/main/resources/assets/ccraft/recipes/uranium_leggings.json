@@ -1,0 +1,19 @@
+{
+	"_comment": [
+		"Craft a pair of Uranium Leggings from uranium ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OOO",
+		"O O",
+		"O O"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:uranium_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:uranium_leggings"
+	}
+}

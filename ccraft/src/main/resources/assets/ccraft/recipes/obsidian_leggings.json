@@ -1,0 +1,19 @@
+{
+	"_comment": [
+		"Craft an Obsidian Leggings from obsidian ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OOO",
+		"O O",
+		"O O"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:obsidian_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:obsidian_leggings"
+	}
+}

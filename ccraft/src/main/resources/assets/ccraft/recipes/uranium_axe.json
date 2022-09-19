@@ -1,0 +1,22 @@
+{
+	"_comment": [
+		"Craft a Uranium Axe out of uranium ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OO",
+		"OS",
+		" S"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:uranium_ingot"
+		},
+		"S": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "ccraft:uranium_axe"
+	}
+}

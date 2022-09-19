@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "ccraft:gold_generator" },
+	"running": { "model": "ccraft:gold_generator_running" }
+    }
+}

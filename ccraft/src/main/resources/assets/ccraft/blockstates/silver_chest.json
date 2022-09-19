@@ -1,0 +1,32 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "ccraft:silver_chest" 
+        },
+        "facing=down": 
+        { 
+            "model": "ccraft:silver_chest" 
+        },
+        "facing=south": 
+        { 
+            "model": "ccraft:silver_chest" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "ccraft:silver_chest","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "ccraft:silver_chest","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "ccraft:silver_chest","y":180 
+        }
+    }
+}

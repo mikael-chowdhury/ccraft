@@ -1,0 +1,45 @@
+// Containers
+container.reducing_furnace=Reducing Furnace
+
+// Items
+item.obsidian_ingot.name=Obsidian Ingot
+item.uranium_ingot.name=Uranium Ingot
+
+item.radioactive_coal.name=Radioactive Coal
+
+// Tools
+item.obsidian_sword.name=Obsidian Sword
+item.obsidian_axe.name=Obsidian Axe
+item.obsidian_pickaxe.name=Obsidian Pickaxe
+item.obsidian_shovel.name=Obsidian Shovel
+item.obsidian_hoe.name=Obsidian Hoe
+
+item.uranium_sword.name=Uranium Sword
+item.uranium_axe.name=Uranium Axe
+item.uranium_pickaxe.name=Uranium Pickaxe
+item.uranium_shovel.name=Uranium Shovel
+item.uranium_hoe.name=Uranium Hoe
+item.uranium_ hammer.name=Uranium Hammer
+
+// Armour
+item.obsidian_helmet.name=Obsidian Helmet
+item.obsidian_chestplate.name=Obsidian Chestplate
+item.obsidian_leggings.name=Obsidian Leggings
+item.obsidian_boots.name=Obsidian Boots
+
+item.uranium_helmet.name=Uranium Helmet
+item.uranium_chestplate.name=Uranium Chestplate
+item.uranium_leggings.name=Uranium Leggings
+item.uranium_boots.name=Uranium Boots
+
+// Blocks
+tile.silver_block.name=Silver Block
+tile.random_block.name=Random Block
+tile.uranium_ore.name=Uranium Ore
+tile.reducing_furnace.name=Reducing Furnace
+tile.silver_chest.name=Silver Chest
+
+// Tabs
+itemGroup.ccraftmaterials=CCraft Materials
+itemGroup.ccraftblocks=CCraft Blocks
+itemGroup.ccrafttools=CCraft Tools

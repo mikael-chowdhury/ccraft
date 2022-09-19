@@ -1,0 +1,22 @@
+{
+	"_comment": [
+		"Craft an Obsidian Hoe out of obsidian ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OO",
+		" S",
+		" S"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:obsidian_ingot"
+		},
+		"S": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "ccraft:obsidian_hoe"
+	}
+}

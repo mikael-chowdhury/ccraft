@@ -10,6 +10,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -30,7 +31,7 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 	public int fuelcount = 0;
 	
 	public TileEntityGenerator(String name, String id, Item item, Block block) {
-		super();
+		super(1);
 		
 		this.item = item;
 		this.block = block;

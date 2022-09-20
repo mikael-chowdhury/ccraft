@@ -47,14 +47,4 @@ public class GuiGenerator extends GuiContainer {
 		this.fontRenderer.drawString(this.te.getDisplayName().getUnformattedText(), 8, 6, 000000);
 		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize-92, 000000);
 	}
-	
-	@Override
-	protected void handleMouseClick(Slot slotIn, int slotId, int mouseButton, ClickType type) {
-		if(slotId == 0) {
-			ItemStack stack = this.inventorySlots.inventorySlots.get(0).getStack();
-			
-			this.player.inventory.addItemStackToInventory(stack);
-		}
-		else super.handleMouseClick(slotIn, slotId, mouseButton, type);
-	}
 }

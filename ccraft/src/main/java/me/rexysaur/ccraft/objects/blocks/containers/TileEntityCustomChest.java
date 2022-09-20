@@ -14,9 +14,19 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class TileEntityCustomChest extends TileEntityLockableLoot implements ITickable {
-	protected NonNullList<ItemStack> chestContents = NonNullList.<ItemStack>withSize(54, ItemStack.EMPTY);
+	protected NonNullList<ItemStack> chestContents;
 	public int numPlayersUsing, ticksSinceSync;
 	public float lidAngle, prevLidAngle;
+	
+	public TileEntityCustomChest() {
+		super();
+		
+		this.chestContents = NonNullList.<ItemStack>withSize(54, ItemStack.EMPTY);
+	}
+	
+	public TileEntityCustomChest(int size) {
+		this.chestContents = NonNullList.<ItemStack>withSize(size, ItemStack.EMPTY);;
+	}
 
 	@Override
 	public int getSizeInventory() {

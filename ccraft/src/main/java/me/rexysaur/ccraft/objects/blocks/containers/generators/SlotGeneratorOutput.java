@@ -6,7 +6,7 @@ import net.minecraft.inventory.Slot;
 
 public class SlotGeneratorOutput extends Slot {
 	public SlotGeneratorOutput(IInventory inventory) {
-		super(inventory, 1, 80, 66);
+		super(inventory, 0, 80, 66);
 	}
 	
 	@Override

@@ -1,0 +1,19 @@
+{
+	"_comment": [
+		"Craft an Obsidian Chestplate from obsidian ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"O O",
+		"OOO",
+		"OOO"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:obsidian_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:obsidian_chestplate"
+	}
+}

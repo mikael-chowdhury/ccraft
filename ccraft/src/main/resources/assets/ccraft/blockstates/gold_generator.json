@@ -1,6 +1,6 @@
 {
     "variants": {
-        "normal": { "model": "ccraft:gold_generator" },
-	"running": { "model": "ccraft:gold_generator_running" }
+        "running=false": { "model": "ccraft:gold_generator" },
+	    "running=true": { "model": "ccraft:gold_generator_running" }
     }
 }

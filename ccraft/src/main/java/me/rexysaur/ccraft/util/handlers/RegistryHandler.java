@@ -1,10 +1,16 @@
 package me.rexysaur.ccraft.util.handlers;
 
+import java.lang.reflect.Field;
+
 import me.rexysaur.ccraft.Main;
 import me.rexysaur.ccraft.init.BlockInit;
 import me.rexysaur.ccraft.init.EntityInit;
 import me.rexysaur.ccraft.init.ItemInit;
 import me.rexysaur.ccraft.objects.blocks.containers.RenderCustomChest;
+import me.rexysaur.ccraft.objects.blocks.containers.generators.Generator;
+import me.rexysaur.ccraft.objects.blocks.containers.generators.RenderGenerator;
+import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
+import me.rexysaur.ccraft.objects.blocks.containers.generators.gold_generator.TileEntityGoldGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.TileEntitySilverChest;
 import me.rexysaur.ccraft.recipes.SmeltingRecipes;
 import me.rexysaur.ccraft.util.interfaces.IHasModel;
@@ -36,6 +42,11 @@ public class RegistryHandler
     	ForgeRegistries.BLOCKS.registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
     	TileEntityHandler.registerTileEntities();
     	ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySilverChest.class, new RenderCustomChest("silver_chest"));
+    	
+    	// Generators
+    	for (TileEntityGenerator generator : TileEntityGenerator.GENERATORS) {
+    		ClientRegistry.bindTileEntitySpecialRenderer(generator.getClass(), new RenderGenerator(generator.id));
+    	}
     }
     
     
@@ -43,6 +54,28 @@ public class RegistryHandler
     public static void onModelRegister(ModelRegistryEvent event)
     {
     	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.SILVER_CHEST), 0, "inventory");
+    	
+    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.GOLD_GENERATOR), 0, "inventory");
+    	
+    	// Generators
+    	for (Generator generator : Generator.GENERATORS) {
+    		Field field;
+			try {
+				field = BlockInit.class.getClass().getField(generator.getUnlocalizedName().toUpperCase());
+	    		Block value;
+				try {
+					
+					value = (Block) field.get(BlockInit.class);
+		    		Main.proxy.registerItemRenderer(Item.getItemFromBlock(value), 0, "inventory");
+		    		
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					e.printStackTrace();
+				}
+			} catch (NoSuchFieldException | SecurityException e) {
+				e.printStackTrace();
+			}
+    	}
+    	
     	
         for(Item item : ItemInit.ITEMS)
         {

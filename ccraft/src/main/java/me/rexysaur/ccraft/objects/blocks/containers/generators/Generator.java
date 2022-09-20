@@ -1,5 +1,8 @@
 package me.rexysaur.ccraft.objects.blocks.containers.generators;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.rexysaur.ccraft.objects.blocks.containers.CustomChest;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -10,20 +13,35 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class Generator extends CustomChest {
+	public static List<Generator> GENERATORS = new ArrayList<Generator>();
+	
 	public static PropertyBool RUNNING = PropertyBool.create("running");
 	
 	protected Generator(String name, Material materialIn, Class<? extends TileEntityGenerator> generatorClass, int gui_id) {
 		super(name, materialIn, gui_id, generatorClass);
 		setDefaultState(this.blockState.getBaseState().withProperty(RUNNING, false));
+		
+		GENERATORS.add(this);
 	}
 	
-	public boolean isRunning(World worldIn, BlockPos pos) {
+	@Override
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+		return this.getDefaultState().withProperty(RUNNING, isRunning(worldIn, pos));
+	}
+	
+	public boolean isRunning(IBlockAccess worldIn, BlockPos pos) {
 		BlockPos posbelow = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
 		Block blockbelow = worldIn.getBlockState(posbelow).getBlock();
-		boolean mining = blockbelow.getRegistryName() == ((TileEntityGenerator)worldIn.getTileEntity(pos)).block.getRegistryName();
+		boolean mining = false;
+		
+		if(blockbelow != null) {
+			mining = blockbelow.getRegistryName() == ((TileEntityGenerator)worldIn.getTileEntity(pos)).block.getRegistryName();
+			
+		}
 		
 		return mining;
 	}
@@ -47,7 +65,7 @@ public class Generator extends CustomChest {
 	@Override
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
 			float hitZ, int meta, EntityLivingBase placer) {
-		return this.getDefaultState().withProperty(RUNNING, isRunning(worldIn, pos));
+		return this.getDefaultState().withProperty(RUNNING, false);
 	}
 	
 	@Override

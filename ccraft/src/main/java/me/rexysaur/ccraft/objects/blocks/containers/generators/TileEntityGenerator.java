@@ -23,15 +23,19 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 	public Item item;
 	public Block block;
 	
+	public String id;
+	
 	public int ticknum = 0;
 	
 	public int fuelcount = 0;
 	
-	public TileEntityGenerator(String name, Item item, Block block) {
+	public TileEntityGenerator(String name, String id, Item item, Block block) {
 		super();
 		
 		this.item = item;
 		this.block = block;
+		
+		this.id = id;
 		
 		this.setCustomName(name);
 		
@@ -42,14 +46,12 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 	
 	@Override
 	public int getSizeInventory() {
-		return 2;
+		return 1;
 	}
 	
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		if (index == 1) {
 			return stack.getItem().getRegistryName() == item.getRegistryName();
-		} else return stack.getItem().getUnlocalizedName() == "radioactive_coal";
 	}
 	
 	@Override
@@ -74,14 +76,14 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 		Block blockbelow = world.getBlockState(posbelow).getBlock();
 		boolean mining = blockbelow.getRegistryName() == block.getRegistryName();
 		
-		ItemStack output = this.getStackInSlot(1);
+		ItemStack output = this.getStackInSlot(0);
 		
 		if(mining) {
 			if(output.getCount() < 64) {
 				ticknum++;
 				
 				if(ticknum >= 200) {
-					this.setInventorySlotContents(1, new ItemStack(item, (output != null ? output.getCount() : 0) + 1));
+					this.setInventorySlotContents(0, new ItemStack(item, (output != null ? output.getCount() : 0) + 1));
 					
 					ticknum = 0;
 				}

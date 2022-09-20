@@ -1,0 +1,18 @@
+{
+	"_comment": [
+		"Craft an Obsidian Helmet from obsidian ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OOO",
+		"O O"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:obsidian_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:obsidian_helmet"
+	}
+}

@@ -28,7 +28,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class CustomChest extends BlockContainer implements IHasModel {
-	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 
 	public final int gui_id;
 	public final Class<? extends TileEntityCustomChest> tileentityclass;
@@ -47,8 +46,7 @@ public class CustomChest extends BlockContainer implements IHasModel {
 		setHarvestLevel("pickaxe", -1);
 		setResistance(18.0f);
 		setSoundType(SoundType.METAL);
-		setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH));
-		
+
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
@@ -88,38 +86,7 @@ public class CustomChest extends BlockContainer implements IHasModel {
 				((TileEntityCustomChest)tileentity).setCustomName(stack.getDisplayName());
 		}
 	}
-	
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		IBlockState state = this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta));
-		return state;
-	}
-	
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return ((EnumFacing)state.getValue(FACING)).getIndex();
-	}
-	
-	@Override
-	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {FACING});
-	}
-	
-	@Override
-	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
-			float hitZ, int meta, EntityLivingBase placer) {
-		IBlockState state = worldIn.getBlockState(pos.offset(facing.getOpposite()));
-		
-		if(state.getBlock() == this) {
-			EnumFacing enumfacing = (EnumFacing) state.getValue(FACING);
-			if(enumfacing == facing) {
-				return this.getDefaultState().withProperty(FACING, facing);
-			}
-		}
-		
-		return this.getDefaultState().withProperty(FACING, facing);
-	}
-	
+
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT;
@@ -142,7 +109,7 @@ public class CustomChest extends BlockContainer implements IHasModel {
 	
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state) {
-		return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+		return EnumBlockRenderType.MODEL;
 	}
 
 	@Override

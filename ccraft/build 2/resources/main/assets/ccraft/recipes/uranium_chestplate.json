@@ -1,0 +1,19 @@
+{
+	"_comment": [
+		"Craft a Uranium Chestplate from uranium ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"O O",
+		"OOO",
+		"OOO"
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:uranium_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:uranium_chestplate"
+	}
+}

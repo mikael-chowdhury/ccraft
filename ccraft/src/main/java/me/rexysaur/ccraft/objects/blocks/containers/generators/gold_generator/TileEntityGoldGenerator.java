@@ -6,6 +6,6 @@ import net.minecraft.init.Items;
 
 public class TileEntityGoldGenerator extends TileEntityGenerator {
 	public TileEntityGoldGenerator() {
-		super("Gold Generator", Items.GOLD_INGOT, Blocks.GOLD_ORE);
+		super("Gold Generator", "gold_generator", Items.GOLD_INGOT, Blocks.GOLD_ORE);
 	}
 }

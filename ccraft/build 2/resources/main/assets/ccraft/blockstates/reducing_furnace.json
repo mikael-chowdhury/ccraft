@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "burning=false,facing=north": { "model": "ccraft:reducing_furnace" },
+        "burning=false,facing=east": { "model": "ccraft:reducing_furnace", "y": 90 },
+        "burning=false,facing=south": { "model": "ccraft:reducing_furnace", "y": 180 },
+        "burning=false,facing=west": { "model": "ccraft:reducing_furnace", "y": 270 },
+        "burning=true,facing=north": { "model": "ccraft:lit_reducing_furnace" },
+        "burning=true,facing=east": { "model": "ccraft:lit_reducing_furnace", "y": 90 },
+        "burning=true,facing=south": { "model": "ccraft:lit_reducing_furnace", "y": 180 },
+        "burning=true,facing=west": { "model": "ccraft:lit_reducing_furnace", "y": 270 },
+    }
+}

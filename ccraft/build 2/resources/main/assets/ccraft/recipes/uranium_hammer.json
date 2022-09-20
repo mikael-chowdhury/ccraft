@@ -1,0 +1,22 @@
+{
+	"_comment": [
+		"Craft a Uranium Hammer out of uranium ingots"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"OOO",
+		"OSO",
+		" S "
+	],
+	"key": {
+		"O": {
+			"item": "ccraft:uranium_ingot"
+		},
+		"S": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "ccraft:uranium_hammer"
+	}
+}

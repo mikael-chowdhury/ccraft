@@ -8,5 +8,4 @@ public class RenderGenerator extends RenderCustomChest {
 		super(texture_name);
 		this.MODEL = new ModelGenerator();
 	}
-
 }

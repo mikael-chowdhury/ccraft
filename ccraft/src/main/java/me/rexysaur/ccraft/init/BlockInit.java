@@ -7,6 +7,7 @@ import me.rexysaur.ccraft.Main;
 import me.rexysaur.ccraft.objects.blocks.BlockBase;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.diamond_generator.DiamondGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.gold_generator.GoldGenerator;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.Refinery;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.SilverChest;
 import me.rexysaur.ccraft.objects.blocks.misc.RandomBlock;
 import me.rexysaur.ccraft.objects.blocks.ore.UraniumOre;
@@ -28,7 +29,9 @@ public class BlockInit {
 	// Ores
 	public static final Block URANIUM_ORE = new UraniumOre("uranium_ore", Material.ROCK);
 	
-	// Refined
+	// Refinery
+	public static final Block REFINERY = new Refinery("refinery", Material.IRON, Reference.GUI_REFINERY);
+	
 	public static final Block REFINED_GOLD_BLOCK = new BlockBase("refined_gold_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
 	public static final Block REFINED_DIAMOND_BLOCK = new BlockBase("refined_diamond_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
 }

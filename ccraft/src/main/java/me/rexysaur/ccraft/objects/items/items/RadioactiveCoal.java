@@ -1,14 +1,13 @@
 package me.rexysaur.ccraft.objects.items.items;
 
-import me.rexysaur.ccraft.Main;
-import me.rexysaur.ccraft.objects.items.ItemBase;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.FuelRefinery;
 import me.rexysaur.ccraft.util.interfaces.IHasModel;
 import net.minecraft.item.ItemStack;
 
-public class RadioactiveCoal extends ItemBase implements IHasModel {
+public class RadioactiveCoal extends FuelRefinery implements IHasModel {
 
 	public RadioactiveCoal(String name) {
-		super(name, Main.CCRAFTMATERIALSTAB);
+		super(name, 12000);
 	}
 
 	@Override

@@ -8,6 +8,9 @@ import me.rexysaur.ccraft.objects.blocks.containers.CustomContainer;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.ContainerGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.GuiGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.ContainerRefinery;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.GuiRefinery;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.TileEntityRefinery;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.GuiSilverChest;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.TileEntitySilverChest;
 import me.rexysaur.ccraft.util.Reference;
@@ -26,14 +29,17 @@ public class GuiHandler implements IGuiHandler {
 			return new CustomContainer(player.inventory, (TileEntitySilverChest)world.getTileEntity(new BlockPos(x, y, z)), player);
 		}
 		
-		ContainerGenerator container = null;
 		for (GuiObject gui : GUIS) {
 			if(ID == gui.id) {
-				container = new ContainerGenerator(player.inventory, (TileEntityGenerator)world.getTileEntity(new BlockPos(x, y, z)), player);
+				return new ContainerGenerator(player.inventory, (TileEntityGenerator)world.getTileEntity(new BlockPos(x, y, z)), player);
 			}
 		}
 		
-		return container;
+		if(ID == Reference.GUI_REFINERY) {
+			return new ContainerRefinery(player.inventory, (TileEntityRefinery)world.getTileEntity(new BlockPos(x, y, z)), player);
+		}
+		
+		return null;
 	}
 
 	@Override
@@ -42,15 +48,17 @@ public class GuiHandler implements IGuiHandler {
 			return new GuiSilverChest(player.inventory, (TileEntitySilverChest)world.getTileEntity(new BlockPos(x, y, z)), player);
 		}
 
-		GuiContainer container = null;
-		
 		for (GuiObject gui : GUIS) {
 			if(ID == gui.id) {
-				container = new GuiGenerator(player.inventory, (TileEntityGenerator)world.getTileEntity(new BlockPos(x, y, z)), player, gui.name);
+				return new GuiGenerator(player.inventory, (TileEntityGenerator)world.getTileEntity(new BlockPos(x, y, z)), player, gui.name);
 			}
 		}
 		
-		return container;
+		if(ID == Reference.GUI_REFINERY) {
+			return new GuiRefinery(player.inventory, (TileEntityRefinery)world.getTileEntity(new BlockPos(x, y, z)), player);
+		}
+		
+		return null;
 	}
 	
 	public static void registerGuis() {

@@ -16,6 +16,8 @@ public class Reference
 	public static final int GUI_GOLD_GENERATOR = 3;
 	public static final int GUI_DIAMOND_GENERATOR = 4;
 	
+	public static final int GUI_REFINERY = 5;
+	
 	// Entities
 	public static final int ENTITY_TEST = 250;
 }

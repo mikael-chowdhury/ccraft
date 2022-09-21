@@ -12,6 +12,7 @@ import me.rexysaur.ccraft.objects.blocks.containers.generators.RenderGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.gold_generator.TileEntityGoldGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.TileEntitySilverChest;
+import me.rexysaur.ccraft.recipes.RefineryRecipes;
 import me.rexysaur.ccraft.recipes.SmeltingRecipes;
 import me.rexysaur.ccraft.util.interfaces.IHasModel;
 import me.rexysaur.ccraft.world.gen.WorldGenOres;
@@ -108,6 +109,7 @@ public class RegistryHandler
     	NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
     	
     	SmeltingRecipes.init();
+    	RefineryRecipes.init();
     }
     
     public static void postInitRegistries()

@@ -1,25 +1,23 @@
 package me.rexysaur.ccraft.objects.blocks.containers.refinery;
 
-import me.rexysaur.ccraft.objects.blocks.containers.generators.ContainerGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
 import me.rexysaur.ccraft.util.Reference;
-import net.minecraft.block.Block;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 
 public class GuiRefinery extends GuiContainer {
 	private final ResourceLocation GUI_CUSTOM_CHEST_TEXTURE;
 	
 	private final InventoryPlayer playerInv;
-	private final TileEntityGenerator te;
+	private final TileEntityRefinery te;
 	
+	@SuppressWarnings("unused")
 	private EntityPlayer player;
 
-	public GuiRefinery(InventoryPlayer playerInv, TileEntityGenerator chestInv, EntityPlayer player, String texture_name) {
+	public GuiRefinery(InventoryPlayer playerInv, TileEntityRefinery chestInv, EntityPlayer player) {
 		super(new ContainerRefinery(playerInv, chestInv, player));
 		
 		this.xSize = 175;
@@ -30,18 +28,15 @@ public class GuiRefinery extends GuiContainer {
 		
 		this.player = player;
 		
-		this.GUI_CUSTOM_CHEST_TEXTURE = new ResourceLocation(Reference.MOD_ID + ":textures/gui/" + texture_name + ".png");
+		this.GUI_CUSTOM_CHEST_TEXTURE = new ResourceLocation(Reference.MOD_ID + ":textures/gui/refinery.png");
 	}
 	
 	public boolean isRunning() {
-		BlockPos posbelow = new BlockPos(te.getPos().getX(), te.getPos().getY() - 1, te.getPos().getZ());
-		Block blockbelow = te.getWorld().getBlockState(posbelow).getBlock();
-		boolean mining = blockbelow.getRegistryName() == te.block.getRegistryName();
-		return mining;
+		return te.isRunning();
 	}
 
-	public TileEntityGenerator getTileEntity() {
-		return (TileEntityGenerator) this.te.getWorld().getTileEntity(this.te.getPos());
+	public TileEntityRefinery getTileEntity() {
+		return (TileEntityRefinery) this.te.getWorld().getTileEntity(this.te.getPos());
 	}
 
 	@Override
@@ -56,10 +51,10 @@ public class GuiRefinery extends GuiContainer {
 		this.fontRenderer.drawString(this.te.getDisplayName().getUnformattedText(), 8, 6, 000000);
 		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize-92, 000000);
 		
-		TileEntityGenerator tileentity = getTileEntity();
+		TileEntityRefinery tileentity = getTileEntity();
 
 		if(isRunning()) {
-			this.fontRenderer.drawString("Generating... " + ((int)Math.floor(100.0 * tileentity.ticknum / tileentity.tickrate)) + "%", 50, 40, 4210752);
+			this.fontRenderer.drawString("Refining... " + ((int)Math.floor(100.0 * tileentity.refiningticks / tileentity.getItemRefineTime())) + "%", 50, 20, 4210752);
 		}
 	}
 }

@@ -6,12 +6,12 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerCustomChest extends Container 
+public class CustomContainer extends Container 
 {
 	private final int numRows;
 	private final TileEntityCustomChest chestInventory;
 	
-	public ContainerCustomChest(InventoryPlayer playerInv, TileEntityCustomChest chestInventory, EntityPlayer player) 
+	public CustomContainer(InventoryPlayer playerInv, TileEntityCustomChest chestInventory, EntityPlayer player) 
 	{
 		this.chestInventory = chestInventory;
 		this.numRows = chestInventory.getSizeInventory()/9;

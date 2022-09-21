@@ -1,5 +1,7 @@
-package me.rexysaur.ccraft.objects.blocks.containers.generators;
+package me.rexysaur.ccraft.objects.blocks.containers.refinery;
 
+import me.rexysaur.ccraft.objects.blocks.containers.generators.ContainerGenerator;
+import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
 import me.rexysaur.ccraft.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -9,7 +11,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
-public class GuiGenerator extends GuiContainer {
+public class GuiRefinery extends GuiContainer {
 	private final ResourceLocation GUI_CUSTOM_CHEST_TEXTURE;
 	
 	private final InventoryPlayer playerInv;
@@ -17,9 +19,8 @@ public class GuiGenerator extends GuiContainer {
 	
 	private EntityPlayer player;
 
-	public GuiGenerator(InventoryPlayer playerInv, TileEntityGenerator chestInv, EntityPlayer player, String texture_name) {
-		super(new ContainerGenerator(playerInv, chestInv, player));
-		
+	public GuiRefinery(InventoryPlayer playerInv, TileEntityGenerator chestInv, EntityPlayer player, String texture_name) {
+		super(new ContainerRefinery(playerInv, chestInv, player));
 		
 		this.xSize = 175;
 		this.ySize = 221;

@@ -82,7 +82,7 @@ public class TileEntityCustomChest extends TileEntityLockableLoot implements ITi
 	
 	@Override
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-		return new ContainerCustomChest(playerInventory, this, playerIn);
+		return new CustomContainer(playerInventory, this, playerIn);
 	}
 
 
@@ -97,9 +97,9 @@ public class TileEntityCustomChest extends TileEntityLockableLoot implements ITi
 
             for (EntityPlayer entityplayer : this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB((double)((float)pos.getX() - 5.0F), (double)((float)pos.getY() - 5.0F), (double)((float)pos.getZ() - 5.0F), (double)((float)(pos.getX() + 1) + 5.0F), (double)((float)(pos.getY() + 1) + 5.0F), (double)((float)(pos.getZ() + 1) + 5.0F))))
             {
-                if (entityplayer.openContainer instanceof ContainerCustomChest)
+                if (entityplayer.openContainer instanceof CustomContainer)
                 {
-                    if (((ContainerCustomChest)entityplayer.openContainer).getChestInventory() == this)
+                    if (((CustomContainer)entityplayer.openContainer).getChestInventory() == this)
                     {
                         ++this.numPlayersUsing;
                     }

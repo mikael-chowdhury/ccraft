@@ -71,13 +71,6 @@ public class CustomChest extends BlockContainer implements IHasModel {
 	}
 	
 	@Override
-	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-		TileEntityCustomChest tileentity = (TileEntityCustomChest)worldIn.getTileEntity(pos);
-		InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory) tileentity);
-		super.breakBlock(worldIn, pos, state); 
-	}
-	
-	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
 			ItemStack stack) {
 		if(stack.hasDisplayName()) {

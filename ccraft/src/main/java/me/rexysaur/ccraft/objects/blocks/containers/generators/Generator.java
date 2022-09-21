@@ -36,6 +36,7 @@ public class Generator extends CustomChest {
 	public boolean isRunning(IBlockAccess worldIn, BlockPos pos) {
 		BlockPos posbelow = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
 		Block blockbelow = worldIn.getBlockState(posbelow).getBlock();
+		
 		boolean mining = false;
 		
 		if(blockbelow != null) {

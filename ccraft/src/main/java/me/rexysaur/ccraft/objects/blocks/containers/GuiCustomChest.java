@@ -14,7 +14,7 @@ public class GuiCustomChest extends GuiContainer {
 	private final TileEntityCustomChest te;
 	
 	public GuiCustomChest(InventoryPlayer playerInv, TileEntityCustomChest chestInv, EntityPlayer player, String texture_name) {
-		super(new ContainerCustomChest(playerInv, chestInv, player));
+		super(new CustomContainer(playerInv, chestInv, player));
 		
 		this.xSize = 175;
 		this.ySize = 221;

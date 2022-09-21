@@ -41,7 +41,6 @@ public class RegistryHandler
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
     	ForgeRegistries.BLOCKS.registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
     	TileEntityHandler.registerTileEntities();
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySilverChest.class, new RenderCustomChest("silver_chest"));
     	
     	// Generators
     	for (TileEntityGenerator generator : TileEntityGenerator.GENERATORS) {
@@ -55,8 +54,10 @@ public class RegistryHandler
     {
     	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.SILVER_CHEST), 0, "inventory");
     	
-    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.GOLD_GENERATOR), 0, "inventory");
-    	
+//    	// Generators
+//    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.GOLD_GENERATOR), 0, "inventory");
+//    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.DIAMOND_GENERATOR), 0, "inventory");
+//    	
     	// Generators
     	for (Generator generator : Generator.GENERATORS) {
     		Field field;

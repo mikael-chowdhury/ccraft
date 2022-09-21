@@ -38,6 +38,10 @@ public class ItemInit
 	
 	public static final Item RADIOACTIVE_COAL = new RadioactiveCoal("radioactive_coal");
 	
+	public static final Item FUEL_ROD = new ItemBase("fuel_rod", Main.CCRAFTMATERIALSTAB);
+	
+	public static final Item GENERATOR_CORE = new ItemBase("generator_core", Main.CCRAFTMATERIALSTAB);
+	
 	// Tools
 	public static final Item OBSIDIAN_SWORD = new ToolSword("obsidian_sword", TOOL_OBSIDIAN);
 	public static final Item OBSIDIAN_AXE = new ToolAxe("obsidian_axe", TOOL_OBSIDIAN);

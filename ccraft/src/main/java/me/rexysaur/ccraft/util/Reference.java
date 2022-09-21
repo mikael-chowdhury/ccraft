@@ -12,7 +12,10 @@ public class Reference
 	
 	// Guis
 	public static final int GUI_SILVER_CHEST = 2;
-	public static final int GUI_GOLD_GENERATOR = 3;
 	
+	public static final int GUI_GOLD_GENERATOR = 3;
+	public static final int GUI_DIAMOND_GENERATOR = 4;
+	
+	// Entities
 	public static final int ENTITY_TEST = 250;
 }

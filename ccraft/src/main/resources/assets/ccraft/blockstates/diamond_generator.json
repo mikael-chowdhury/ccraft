@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "running=false": { "model": "ccraft:diamond_generator" },
+	    "running=true": { "model": "ccraft:diamond_generator_running" }
+    }
+}

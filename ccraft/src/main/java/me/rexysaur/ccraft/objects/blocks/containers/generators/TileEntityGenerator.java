@@ -6,12 +6,11 @@ import java.util.List;
 import me.rexysaur.ccraft.objects.blocks.containers.TileEntityCustomChest;
 import me.rexysaur.ccraft.util.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -27,14 +26,15 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 	public String id;
 	
 	public int ticknum = 0;
+	public int tickrate;
 	
-	public int fuelcount = 0;
-	
-	public TileEntityGenerator(String name, String id, Item item, Block block) {
+	public TileEntityGenerator(String name, String id, Item item, Block block, int tickrate) {
 		super(1);
 		
 		this.item = item;
 		this.block = block;
+		
+		this.tickrate = tickrate;
 		
 		this.id = id;
 		
@@ -43,6 +43,10 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 		this.outputSlot = new ItemStackHandler();
 		
 		GENERATORS.add(this);
+	}
+	
+	public World getWorld() {
+		return world;
 	}
 	
 	@Override
@@ -83,7 +87,7 @@ public class TileEntityGenerator extends TileEntityCustomChest {
 			if(output.getCount() < 64) {
 				ticknum++;
 				
-				if(ticknum >= 200) {
+				if(ticknum >= tickrate) {
 					this.setInventorySlotContents(0, new ItemStack(item, (output != null ? output.getCount() : 0) + 1));
 					
 					ticknum = 0;

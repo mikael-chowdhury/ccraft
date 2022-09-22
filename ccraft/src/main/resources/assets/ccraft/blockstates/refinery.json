@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "running=false": { "model": "ccraft:refinery" },
+        "running=true": { "model": "ccraft:refinery_running"}
+    }
+}

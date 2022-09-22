@@ -3,16 +3,20 @@ package me.rexysaur.ccraft.objects.blocks.containers.refinery;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.rexysaur.ccraft.gui.GuiObject;
 import me.rexysaur.ccraft.objects.blocks.containers.CustomChest;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -24,6 +28,7 @@ public class Refinery extends CustomChest {
 	
 	public Refinery(String name, Material materialIn, int gui_id) {
 		super(name, materialIn, gui_id, TileEntityRefinery.class);
+		setDefaultState(this.blockState.getBaseState().withProperty(RUNNING, false));
 	}
 	
 	public static boolean hasItemGotRecipe(Item item) {
@@ -64,7 +69,7 @@ public class Refinery extends CustomChest {
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
 			float hitZ, int meta, EntityLivingBase placer) {
 		return this.getDefaultState().withProperty(RUNNING, false);
-	}
+	} 
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
@@ -85,7 +90,7 @@ public class Refinery extends CustomChest {
 		RecipeRefinery recipe = null;
 		
 		for(RecipeRefinery _recipe : RECIPES) {
-			if(recipe.input == item) {
+			if(_recipe.input == item) {
 				recipe = _recipe;
 				break;
 			}

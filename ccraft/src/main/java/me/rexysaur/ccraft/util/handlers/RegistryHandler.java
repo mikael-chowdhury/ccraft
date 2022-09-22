@@ -6,12 +6,11 @@ import me.rexysaur.ccraft.Main;
 import me.rexysaur.ccraft.init.BlockInit;
 import me.rexysaur.ccraft.init.EntityInit;
 import me.rexysaur.ccraft.init.ItemInit;
-import me.rexysaur.ccraft.objects.blocks.containers.RenderCustomChest;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.Generator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.RenderGenerator;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
-import me.rexysaur.ccraft.objects.blocks.containers.generators.gold_generator.TileEntityGoldGenerator;
-import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.TileEntitySilverChest;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.RenderRefinery;
+import me.rexysaur.ccraft.objects.blocks.containers.refinery.TileEntityRefinery;
 import me.rexysaur.ccraft.recipes.RefineryRecipes;
 import me.rexysaur.ccraft.recipes.SmeltingRecipes;
 import me.rexysaur.ccraft.util.interfaces.IHasModel;
@@ -54,11 +53,7 @@ public class RegistryHandler
     public static void onModelRegister(ModelRegistryEvent event)
     {
     	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.SILVER_CHEST), 0, "inventory");
-    	
-//    	// Generators
-//    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.GOLD_GENERATOR), 0, "inventory");
-//    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.DIAMOND_GENERATOR), 0, "inventory");
-//    	
+
     	// Generators
     	for (Generator generator : Generator.GENERATORS) {
     		Field field;
@@ -78,6 +73,7 @@ public class RegistryHandler
 			}
     	}
     	
+    	Main.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.REFINERY), 0, null);
     	
         for(Item item : ItemInit.ITEMS)
         {

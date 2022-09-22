@@ -2,6 +2,7 @@ package me.rexysaur.ccraft.util.handlers;
 
 import me.rexysaur.ccraft.entity.test.EntityTest;
 import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
+import me.rexysaur.ccraft.util.interfaces.ITickable;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -39,6 +40,10 @@ public class CCraftEventHandler {
 	public void tick(PlayerTickEvent event) {
 		for (TileEntityGenerator gen : TileEntityGenerator.GENERATORS) {
 			gen.update();
+		}
+		
+		for (ITickable tickable : TickHandler.TICKABLES) {
+			tickable.tick();
 		}
 	}
 }

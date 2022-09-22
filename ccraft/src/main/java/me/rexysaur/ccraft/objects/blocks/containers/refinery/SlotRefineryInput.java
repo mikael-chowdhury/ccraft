@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class SlotRefineryInput extends Slot {
 	public SlotRefineryInput(IInventory inventory) {
-		super(inventory, 0, 63, 53);
+		super(inventory, 0, 65, 54);
 	}
 	
 	@Override

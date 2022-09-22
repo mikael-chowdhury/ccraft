@@ -52,7 +52,9 @@ public class GuiRefinery extends GuiContainer {
 		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize-92, 000000);
 		
 		TileEntityRefinery tileentity = getTileEntity();
-
+		
+		this.fontRenderer.drawString("Fuel Level: " + ((int)Math.floor(100.0 * tileentity.fuelticks / tileentity.maxfuelticks)) + "%", 50, 10, 4210752);
+		
 		if(isRunning()) {
 			this.fontRenderer.drawString("Refining... " + ((int)Math.floor(100.0 * tileentity.refiningticks / tileentity.getItemRefineTime())) + "%", 50, 20, 4210752);
 		}

@@ -2,12 +2,12 @@
    "parent": "block/orientable",
    "textures": 
    {
-       "particle": "ccraft:blocks/reducing_furnace_front_off",
+       "particle": "ccraft:blocks/refinery_front",
        "up": "ccraft:blocks/reducing_furnace_top",
        "down": "ccraft:blocks/reducing_furnace_top",
-       "north": "ccraft:blocks/reducing_furnace_front_on",
+       "north": "ccraft:blocks/reducing_furnace_front_running",
        "south": "ccraft:blocks/reducing_furnace_side",
        "east": "ccraft:blocks/reducing_furnace_side",
-       "west": "ccraft:blocks/reducing_furnace_side",
+       "west": "ccraft:blocks/reducing_furnace_side"
    }
 }

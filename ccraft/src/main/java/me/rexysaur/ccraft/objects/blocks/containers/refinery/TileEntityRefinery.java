@@ -17,6 +17,7 @@ public class TileEntityRefinery extends TileEntityCustomChest implements ITickab
 	
 	public TileEntityRefinery() {
 		super(3);
+		this.setCustomName("Refinery");
 		
 		TickHandler.TICKABLES.add(this);
 	}
@@ -37,14 +38,15 @@ public class TileEntityRefinery extends TileEntityCustomChest implements ITickab
 	public void tick() {
 		if(this.getStackInSlot(0) != null && this.getStackInSlot(0).getCount() > 0 &&  (this.getStackInSlot(2).getItem() == Items.AIR || this.getStackInSlot(2).getItem() == Refinery.getRecipeFromInput(this.getStackInSlot(0).getItem()).output)) {
 			if(this.fuelticks > 0) {
-					this.refiningticks += 1;
-					
-					if(this.refiningticks >= getItemRefineTime()) {
-						this.refiningticks = 0;
-						RecipeRefinery recipe = Refinery.getRecipeFromInput(getStackInSlot(0).getItem());
-						this.setInventorySlotContents(2, new ItemStack(recipe.output, (getStackInSlot(2) != null ? getStackInSlot(2).getCount() : 0)+1));
-						this.decrStackSize(0, 1);
-					}
+				this.fuelticks--;
+				this.refiningticks += 1;
+			
+				if(this.refiningticks >= getItemRefineTime()) {
+					this.refiningticks = 0;
+					RecipeRefinery recipe = Refinery.getRecipeFromInput(getStackInSlot(0).getItem());
+					this.setInventorySlotContents(2, new ItemStack(recipe.output, (getStackInSlot(2) != null ? getStackInSlot(2).getCount() : 0)+1));
+					this.decrStackSize(0, 1);
+				}
 			} else {
 				ItemStack fuelstack = this.getStackInSlot(1);
 				
@@ -58,7 +60,7 @@ public class TileEntityRefinery extends TileEntityCustomChest implements ITickab
 				}
 			}
 		}
-	}
+	} 	
 	
 	public boolean isRunning() {
 		return this.fuelticks > 0 && this.refiningticks > 0;

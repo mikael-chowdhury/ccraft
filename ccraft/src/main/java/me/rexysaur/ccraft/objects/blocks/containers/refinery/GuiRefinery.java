@@ -1,6 +1,5 @@
 package me.rexysaur.ccraft.objects.blocks.containers.refinery;
 
-import me.rexysaur.ccraft.objects.blocks.containers.generators.TileEntityGenerator;
 import me.rexysaur.ccraft.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;

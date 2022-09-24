@@ -10,6 +10,7 @@ import me.rexysaur.ccraft.objects.blocks.containers.generators.gold_generator.Go
 import me.rexysaur.ccraft.objects.blocks.containers.refinery.Refinery;
 import me.rexysaur.ccraft.objects.blocks.containers.silver_chest.SilverChest;
 import me.rexysaur.ccraft.objects.blocks.misc.RandomBlock;
+import me.rexysaur.ccraft.objects.blocks.misc.RefinedBlock;
 import me.rexysaur.ccraft.objects.blocks.ore.UraniumOre;
 import me.rexysaur.ccraft.util.Reference;
 import net.minecraft.block.Block;
@@ -32,6 +33,6 @@ public class BlockInit {
 	// Refinery
 	public static final Block REFINERY = new Refinery("refinery", Material.IRON, Reference.GUI_REFINERY);
 	
-	public static final Block REFINED_GOLD_BLOCK = new BlockBase("refined_gold_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
-	public static final Block REFINED_DIAMOND_BLOCK = new BlockBase("refined_diamond_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	public static final Block REFINED_GOLD_BLOCK = new RefinedBlock("refined_gold_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	public static final Block REFINED_DIAMOND_BLOCK = new RefinedBlock("refined_diamond_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
 }

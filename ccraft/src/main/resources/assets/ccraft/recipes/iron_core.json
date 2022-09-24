@@ -1,0 +1,26 @@
+{
+	"_comment": [
+		"Craft an Iron Core"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ifi",
+		"fuf",
+		"ifi"
+	],
+	"key": {
+		"i": {
+			"item": "ccraft:refined_iron_block"
+		},
+		"u": {
+			"item": "ccraft:refined_uranium_block"
+		},
+		"f": {
+			"item": "ccraft:fuel_rod"
+		}
+	},
+	"result": {
+		"item": "ccraft:fuel_rod",
+		"count": 2
+	}
+}

@@ -20,6 +20,8 @@ public class BlockInit {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	public static final Block SILVER_BLOCK = new BlockBase("silver_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	public static final Block URANIUM_BLOCK = new BlockBase("uranium_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	
 	public static final Block RANDOM_BLOCK = new RandomBlock("random_block", Material.ROCK);
 	
 	public static final Block SILVER_CHEST = new SilverChest("silver_chest", Material.WOOD);
@@ -35,4 +37,6 @@ public class BlockInit {
 	
 	public static final Block REFINED_GOLD_BLOCK = new RefinedBlock("refined_gold_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
 	public static final Block REFINED_DIAMOND_BLOCK = new RefinedBlock("refined_diamond_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	public static final Block REFINED_IRON_BLOCK = new RefinedBlock("refined_iron_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
+	public static final Block REFINED_URANIUM_BLOCK = new RefinedBlock("refined_uranium_block", Material.IRON, Main.CCRAFTBLOCKSTAB);
 }

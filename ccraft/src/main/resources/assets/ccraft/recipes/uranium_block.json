@@ -1,0 +1,19 @@
+{
+	"_comment": [
+		"Craft a Uranium Block"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"UUU",
+		"UUU",
+		"UUU"
+	],
+	"key": {
+		"U": {
+			"item": "ccraft:uranium_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:uranium_block"
+	}
+}

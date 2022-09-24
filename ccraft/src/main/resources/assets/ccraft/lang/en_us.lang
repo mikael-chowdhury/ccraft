@@ -7,6 +7,11 @@ item.uranium_ingot.name=Uranium Ingot
 
 item.radioactive_coal.name=Radioactive Coal
 
+item.generator_core.name=Generator Core
+item.iron_core.name=Iron Core
+
+item.fuel_rod.name=Fuel Rod
+
 // Tools
 item.obsidian_sword.name=Obsidian Sword
 item.obsidian_axe.name=Obsidian Axe
@@ -19,7 +24,7 @@ item.uranium_axe.name=Uranium Axe
 item.uranium_pickaxe.name=Uranium Pickaxe
 item.uranium_shovel.name=Uranium Shovel
 item.uranium_hoe.name=Uranium Hoe
-item.uranium_ hammer.name=Uranium Hammer
+item.uranium_hammer.name=Uranium Hammer
 
 // Armour
 item.obsidian_helmet.name=Obsidian Helmet
@@ -34,10 +39,23 @@ item.uranium_boots.name=Uranium Boots
 
 // Blocks
 tile.silver_block.name=Silver Block
+tile.uranium_block.name=Uranium Block
+
 tile.random_block.name=Random Block
+
 tile.uranium_ore.name=Uranium Ore
-tile.reducing_furnace.name=Reducing Furnace
+
 tile.silver_chest.name=Silver Chest
+
+tile.gold_generator.name=Gold Generator
+tile.diamond_generator.name=Diamond Generator
+
+tile.refined_diamond_block.name=Refined Diamond Block
+tile.refined_gold_block.name=Refined Gold Block
+tile.refined_iron_block.name=Refined Iron Block
+tile.refined_uranium__block.name=Refined Uranium Block
+
+tile.refinery.name=Refinery
 
 // Tabs
 itemGroup.ccraftmaterials=CCraft Materials

@@ -1,0 +1,23 @@
+{
+	"_comment": [
+		"Craft a Fuel Rod"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"iui",
+		"iui",
+		"iui"
+	],
+	"key": {
+		"i": {
+			"item": "minecraft:iron_ingot"
+		},
+		"u": {
+			"item": "ccraft:uranium_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:fuel_rod",
+		"count": 2
+	}
+}

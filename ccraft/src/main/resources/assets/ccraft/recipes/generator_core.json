@@ -1,0 +1,23 @@
+{
+	"_comment": [
+		"Craft a Geneartor Core"
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"fuf",
+		"fuf",
+		"fuf"
+	],
+	"key": {
+		"i": {
+			"item": "minecraft:iron_ingot"
+		},
+		"u": {
+			"item": "ccraft:uranium_ingot"
+		}
+	},
+	"result": {
+		"item": "ccraft:fuel_rod",
+		"count": 2
+	}
+}

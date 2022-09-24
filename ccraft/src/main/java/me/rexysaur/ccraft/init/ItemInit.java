@@ -41,6 +41,7 @@ public class ItemInit
 	public static final Item FUEL_ROD = new ItemBase("fuel_rod", Main.CCRAFTMATERIALSTAB);
 	
 	public static final Item GENERATOR_CORE = new ItemBase("generator_core", Main.CCRAFTMATERIALSTAB);
+	public static final Item IRON_CORE = new ItemBase("iron_core", Main.CCRAFTMATERIALSTAB);
 	
 	// Tools
 	public static final Item OBSIDIAN_SWORD = new ToolSword("obsidian_sword", TOOL_OBSIDIAN);

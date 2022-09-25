@@ -1,13 +1,12 @@
 {
-   "parent": "block/orientable",
-   "textures": 
-   {
-       "particle": "ccraft:blocks/refinery_front",
-       "up": "ccraft:blocks/reducing_furnace_top",
-       "down": "ccraft:blocks/reducing_furnace_top",
-       "north": "ccraft:blocks/reducing_furnace_front_running",
-       "south": "ccraft:blocks/reducing_furnace_side",
-       "east": "ccraft:blocks/reducing_furnace_side",
-       "west": "ccraft:blocks/reducing_furnace_side"
-   }
+  "parent": "block/orientable",
+  "textures": {
+    "particle": "ccraft:blocks/refinery_front_running",
+    "up": "ccraft:blocks/refinery_top",
+    "down": "ccraft:blocks/refinery_top",
+    "north": "ccraft:blocks/refinery_front",
+    "south": "ccraft:blocks/refinery_side",
+    "east": "ccraft:blocks/refinery_side",
+    "west": "ccraft:blocks/refinery_side"
+  }
 }

@@ -32,7 +32,7 @@ public class ToolHammer extends ToolPickaxe {
 			EntityPlayer player = (EntityPlayer) entityLiving;
 			if(!player.isSneaking()) {
 				
-				RayTraceResult result = player.rayTrace(100D, 100);
+				RayTraceResult result = player.rayTrace(3D, 100);
 				
 				EnumFacing side = result.sideHit;
 				
@@ -70,6 +70,7 @@ public class ToolHammer extends ToolPickaxe {
 					bottomright = new BlockPos(pos.getX()+1, pos.getY()-1, pos.getZ());
 					
 				} else {
+					System.err.println(side.getName());
 					topleft = new BlockPos(pos.getX()-1, pos.getY(), pos.getZ()+1);
 					middleleft = new BlockPos(pos.getX()-1, pos.getY(), pos.getZ());
 					bottomleft = new BlockPos(pos.getX()-1, pos.getY(), pos.getZ()-1);
@@ -88,15 +89,7 @@ public class ToolHammer extends ToolPickaxe {
 					IBlockState block = worldIn.getBlockState(_pos);
 
 					if(player.inventory.getCurrentItem().canHarvestBlock(block)) {
-						NonNullList<ItemStack> drops = NonNullList.create();
-						
-						block.getBlock().getDrops(drops, worldIn, pos, state, 1);
-						
-						for(ItemStack drop : drops) {
-							worldIn.spawnEntity(new EntityItem(worldIn, _pos.getX(), _pos.getY(), _pos.getZ(), drop));
-						}
-
-						worldIn.setBlockToAir(_pos);
+						block.getBlock().breakBlock(worldIn, pos, state);
 					}
 				}
 			}
